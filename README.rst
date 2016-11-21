@@ -31,14 +31,14 @@ Once the server is started, the stdout, stderr and access/errors
 logs are intercepted by the class so they can be asserted in the
 tests. The stop method kills the server.
 
-Example of usage with WebTest::
+Sample Nginx tests using WebTest::
 
     import unittest2
     from webtest import TestApp
     from nginxtest.server import NginxServer
 
 
-    class TestMyNginx(unittest2.TestCase):
+    class TestNginx(unittest2.TestCase):
 
         def setUp(self):
             self.nginx = NginxServer()
@@ -54,14 +54,14 @@ Example of usage with WebTest::
             self.assertTrue('Welcome to nginx!' in resp.body)
 
 
-Limitations
+Expansion Scope
 -----------
 
-This project is very limited compared to Test::Nginx.
+This project is limited currently (covering only a few scenarios).
 
-Stuff I'd like to add at some point:
+This can further be expanded, here are some of the ideas that I would like to impelment:
 
-- Lua test coverage
-- XXX
+- AB testing (test traffic routing)
+- Cache expiration testing
 
 
