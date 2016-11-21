@@ -58,7 +58,22 @@ In order to run these tests, run following command
 
 :code:`sudo python -m unittest2 TestNginx`
 
-- Output
+Output
+
+    Stopping server...
+    
+    .2016/11/21 07:54:12 [error] 3742#3742: *2 open() "/usr/share/nginx/html/hello" failed (2: No such file or directory), client: 127.0.0.1, server: , request: "GET /hello HTTP/1.1", host: "localhost:1984"
+    
+    Stopping server...
+    .2016/11/21 07:54:12 [error] 3744#3744: *8 limiting requests, excess: 6.760 by zone "one", client: 127.0.0.1, server: , request: "GET / HTTP/1.1", host: "localhost:1984"
+    
+    Stopping server...
+    .
+    ----------------------------------------------------------------------
+    
+    Ran 3 tests in 1.118s
+
+    OK
 
 
 Expansion Scope
