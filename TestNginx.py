@@ -16,8 +16,8 @@ class TestNginx(unittest2.TestCase):
         self.nginx.stop()
 	print("Stopping server...")
 
-   #Test HTTP Status code 200 
-   def testCheckResponse200(self):
+    #Test HTTP Status code 200 
+    def testCheckResponse200(self):
         resp = self.app.get('/')
         self.assertEqual(resp.status_int, 200)
         self.assertTrue('Welcome to nginx!' in resp.body)
