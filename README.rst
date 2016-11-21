@@ -4,17 +4,15 @@ NginxTest
 This project provides some helpers to write functional tests against
 an Nginx server.
 
-Motivation
-----------
+Prerequisites
+-----------
+For running this test, please make you have following installed
 
-The main motivation is to test Nginx/Lua scripts in an
-OpenResty environment. There's a Perl project to do this called
-Test::Nginx which is based on a light DSL to write the tests.
-
-But I like writing plain Python tests better, especially
-since I can use WebTest to deal with all the calls against the
-Nginx server.
-
+- Python 2.7+
+- pip
+- unittest2
+- webtest
+- mekotemplate
 
 The NginxServer class
 ---------------------
@@ -52,6 +50,15 @@ Sample Nginx tests using WebTest::
             resp = self.app.get('/')
             self.assertEqual(resp.status_int, 200)
             self.assertTrue('Welcome to nginx!' in resp.body)
+
+
+How to Run
+-----------
+In order to run these tests, run following command
+
+:code:`sudo python -m unittest2 TestNginx`
+
+- Output
 
 
 Expansion Scope
